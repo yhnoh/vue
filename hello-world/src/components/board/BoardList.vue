@@ -1,4 +1,23 @@
 <script>
+
+import axios from 'axios'
+import {watchEffect} from "vue";
+
+
+
+axios.get('').then(() => {
+
+}).catch((error) => {
+
+})
+    .finally(() => {
+
+    })
+
+watchEffect(async () => {
+
+})
+
 export default {
   data () {
     return {
@@ -50,26 +69,28 @@ export default {
 </script>
 
 <template>
+    <v-table style="width: 100%; height: 100%">
+      <thead>
+      <tr>
+        <th class="text-left">
+          Name
+        </th>
+        <th class="text-left">
+          Calories
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+          v-for="item in desserts"
+          :key="item.name"
+      >
+        <td>{{ item.name }}</td>
+        <td>{{ item.calories }}</td>
+      </tr>
+      </tbody>
+    </v-table>
 
-  <v-table>
-    <thead>
-    <tr>
-      <th class="text-left">
-        Name
-      </th>
-      <th class="text-left">
-        Calories
-      </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr
-        v-for="item in desserts"
-        :key="item.name"
-    >
-      <td>{{ item.name }}</td>
-      <td>{{ item.calories }}</td>
-    </tr>
-    </tbody>
-  </v-table>
+
+
 </template>
