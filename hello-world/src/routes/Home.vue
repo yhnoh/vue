@@ -3,12 +3,17 @@
 </script>
 
 <template>
-  <h1>Home</h1>
-  <div class="btn btn-primary col">
-    Home
-  </div>
+  <Headline></Headline>
 </template>
 
+<script>
+import Headline from "@/components/Headline.vue";
+export default {
+  components: {
+    Headline
+  }
+}
+</script>
 <style scoped>
 
 </style>
