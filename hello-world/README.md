@@ -1,6 +1,9 @@
 Vue Router
 - 컴포넌트와 페이지 주소를 연결하는 패키지
 
+### bootstrap
+- container 레이아웃 지정
+
 ### axios
 - 통신라이브러리
 - async await 키워드를 통해서 비동기 방식으로 데이터를 전달받을 수 있다.

@@ -6,7 +6,7 @@ export default {
     // data
     state: () => ({
         movies: [],
-        message: '',
+        message: 'Search for the movie title!!',
         loading: false
     }),
     // computed 계산된 상태를 만들어 낼 수 있다.
@@ -31,6 +31,15 @@ export default {
     // 객체 분해 확인하기
     actions: {
         async searchMovies({ state, commit }, payload) {
+            if(state.loading){
+                return;
+            }
+
+            commit('updateState', {
+                message: '',
+                loading: true
+            })
+
             try{
                 const res = await _fetchMovie({...payload, page: 1});
                 const { Search, totalResults } = res.data;
@@ -61,6 +70,10 @@ export default {
                 commit('updateState', {
                     movies: [],
                     message
+                })
+            }finally {
+                commit('updateState', {
+                    loading: false
                 })
             }
 
