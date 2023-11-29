@@ -15,11 +15,17 @@
         <div class="skeleton etc"></div>
       </div>
     </div>
+    <Loder :size="3" :z-index="9" fixed absolute />
   </div>
 </template>
 
 <script>
+import Loder from "@/components/Loder.vue";
+
 export default {
+  components: {
+    Loder
+  },
   created(){
     console.log(this.$route)
     this.$store.dispatch('movie/searchMovieWithId', {
